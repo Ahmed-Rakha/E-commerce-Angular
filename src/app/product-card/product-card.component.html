@@ -1,0 +1,56 @@
+<div class="card h-100 position-relative">
+  <div style="background-color: #dfebe7; text-align: center">
+    <img
+      [src]="productItem.images[0]"
+      class="card-img-top"
+      [alt]="productItem.title"
+      style="width: 200px; height: 250px"
+      (click)="redirectToDetails(productItem.id)"
+    />
+  </div>
+
+  @if(productItem.stock == 5){
+  <span
+    class="badge text-bg-danger position-absolute"
+    style="top: 20px; left: 20px"
+    >Out of Stock</span
+  >} @else {<span
+    class="badge text-bg-success position-absolute"
+    style="top: 20px; left: 20px"
+    >In Stock</span
+  >
+  }
+
+  <div class="card-body">
+    <span *ngFor="let _ of [].constructor(stars.total); let i = index">
+      <i class="fa-solid fa-star" style="color: #0fd79b"></i>
+    </span>
+    @if(stars.fractions > 0.4){
+    <i class="fa-solid fa-star-half-stroke" style="color: #0fd79b"></i>
+    }
+
+    <span class="ms-2 bg-black text-white p-1 px-3 rounded-1">{{
+      productItem.rating
+    }}</span>
+
+    <h5 class="card-title mt-4 d-flex justify-content-between">
+      {{ productItem.title }}
+      <p class="text-secondary bold">{{ productItem.price }} EGP</p>
+    </h5>
+    <p>
+      {{ productItem.description }}
+    </p>
+    <button
+      class="btn btn-outline-dark rounded-3 mx-2"
+      (click)="addToCart(productItem.id)"
+    >
+      Add To Cart
+    </button>
+    <!-- <button
+      class="btn btn-outline-dark rounded-3"
+      (click)="redirectToDetails(productItem.id)"
+    >
+      Product Details
+    </button> -->
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-brand">Products App</span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav d-flex justify-content-between w-100">
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="active_link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Products</a
+        >
+        <!-- <a
+          class="nav-link"
+          routerLink="/add-product"
+          routerLinkActive="active_link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Add Product</a
+        > -->
+        <!-- <a
+          class="nav-link"
+          routerLink="/add-elegant-product"
+          routerLinkActive="active_link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Add Product2</a
+        > -->
+        <div class="d-flex">
+          <a
+            class="nav-link"
+            routerLink="/register"
+            routerLinkActive="active_link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Register</a
+          >
+          <a
+            class="nav-link"
+            routerLink="/login"
+            routerLinkActive="active_link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Login</a
+          >
+          <a
+            class="nav-link position-relative"
+            routerLink="/cart"
+            routerLinkActive="active_link"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              class="badge bg-danger position-absolute top-10 start-100 translate-middle"
+              >{{ cartCount }}</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

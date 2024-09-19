@@ -1,0 +1,70 @@
+<div class="container row">
+  <div class="col-6 border border-1">
+    <img [src]="productDetails.images[0]" class="w-100" alt="avatar" />
+  </div>
+  <div class="col-6">
+    <h1>{{ productDetails.title }}</h1>
+    <p>{{ productDetails.description }}</p>
+    <span *ngFor="let _ of [].constructor(stars.total); let i = index">
+      <i class="fa-solid fa-star" style="color: #0fd79b"></i>
+    </span>
+    @if(stars.fractions > 0.4){
+    <i class="fa-solid fa-star-half-stroke" style="color: #0fd79b"></i>
+    }
+
+    <span class="ms-2"> ({{ productDetails.reviews.length }})</span>
+    <hr />
+    <p class="bold fs-3">{{ productDetails.price }} EGP</p>
+    @if(productDetails.stock == 0){
+    <span class="badge text-bg-danger" style="top: 20px; left: 20px"
+      >Out of Stock</span
+    >} @else {<span class="badge text-bg-success" style="top: 20px; left: 20px"
+      >In Stock</span
+    >
+    }
+    <hr />
+    <p>More Information</p>
+    <button class="btn btn-secondary me-3" (click)="handleMoreInfo('category')">
+      Category
+    </button>
+    <button class="btn btn-secondary" (click)="handleMoreInfo('brand')">
+      Brand
+    </button>
+    <p class="mt-3 fs-2">
+      {{ moreInfoContent | uppercase }}
+    </p>
+    <hr />
+    <div class="d-flex gap-3 align-items-center">
+      <div
+        class="d-flex align-items-center justify-content-between p-2 border border-2 rounded-3 gap-2"
+        style="width: 150px"
+      >
+        <button class="btn btn-outline-secondary" (click)="decrement()">
+          -
+        </button>
+        <span class="fs-4 fw-bold">{{ count }}</span>
+
+        <button class="btn btn-outline-secondary" (click)="increment()">
+          +
+        </button>
+      </div>
+      <p>
+        Only
+        <span style="color: #fabc3f; font-weight: bold"
+          >{{ productDetails.stock }}
+        </span>
+        items left Don't miss it
+      </p>
+    </div>
+    <small class="mt-3">{{ countMessage }}</small>
+    <div class="mt-3 d-flex gap-3">
+      <button class="btn btn-outline-success">Buy Now</button>
+      <button
+        class="btn btn-outline-success"
+        (click)="addToCart(productDetails.id)"
+      >
+        Add To Cart
+      </button>
+    </div>
+  </div>
+</div>

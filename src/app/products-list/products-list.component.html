@@ -1,0 +1,16 @@
+<h2 class="bg-secondary text-white py-3 ps-3 rounded-1">
+  Welcome to our shopping website, start browsing...
+</h2>
+<hr />
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  @for (product of products; track product.id) {
+  <div class="col">
+    <app-product-card
+      [productItem]="product"
+      (sendToParent)="receiveFromChild($event)"
+    ></app-product-card>
+  </div>
+  }@empty {
+  <p>No data found</p>
+  }
+</div>
