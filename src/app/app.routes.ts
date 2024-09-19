@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ProductsListComponent } from './products-list/recipes-list.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authGuard } from './guards/auth.guard';

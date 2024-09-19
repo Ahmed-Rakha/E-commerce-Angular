@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { ProductsListComponent } from './products-list/recipes-list.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { RouterOutlet } from '@angular/router';
 import products from '../assets/data/products.json';
 @Component({
